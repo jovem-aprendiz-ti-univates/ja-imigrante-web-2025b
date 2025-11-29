@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .background {
+            background-color: #00f386;
+            color: rgb(255, 242, 2)
+        }
+        .background-dark {
+            background-color: #000000;
+        }
+
+    </style>
+</head>
+
+<body id="bodi" class="background">
+    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore consequuntur assumenda obcaecati facilis possimus. Corrupti blanditiis et sunt omnis quod, perspiciatis similique laudantium enim odio aperiam soluta iure illo illum.</h1>
+    <button id="btn" type="button">Mudar tema</button>
+
+    <script>
+        const butao = document.getElementById("btn");
+        const bodi = document.getElementById("bodi");
+
+        butao.addEventListener("click", trocaTema);
+
+        function trocaTema() {
+            const texto = document.createElement("p");
+            texto.textContent = "Não há mais nada a ser fazido";
+            bodi.appendChild(texto);
+            
+            if (bodi.classList.contains("background-dark")) {
+                bodi.classList.remove("background-dark");
+            } else {
+                bodi.classList.add("background-dark");
+            }
+        }
+    </script>
+</body>
+
+</html>

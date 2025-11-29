@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão Fugitivo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .container {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        #btnSim {
+            background-color: #4CAF50;
+            color: white;
+            position: absolute;
+            left: 50px;
+            top: 50%;
+        }
+
+        #btnNao {
+            background-color: #f44336;
+            color: white;
+            position: absolute;
+            right: 50px;
+            top: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Você gosta de programar?</h1>
+    
+    <div class="container">
+        <button id="btnSim">Sim</button>
+        <button id="btnNao">Não</button>
+    </div>
+
+    <script>
+        // Pegando os elementos dos botões
+        const btnSim = document.getElementById('btnSim');
+        const btnNao = document.getElementById('btnNao');
+        const container = document.querySelector('.container');
+
+        // Função para o botão SIM
+        // Quando clicar no SIM, mostra uma mensagem de alerta
+        btnSim.addEventListener('click', function() {
+            alert('Ótimo! Continue programando!');
+        });
+
+        // Função para fazer o botão NÃO fugir do mouse
+        // Quando o mouse passar perto do botão, ele muda de posição
+        btnNao.addEventListener('mouseover', function() {
+            // Pega o tamanho do container
+            const containerWidth = container.offsetWidth;
+            const containerHeight = container.offsetHeight;
+            
+            // Pega o tamanho do botão
+            const btnWidth = btnNao.offsetWidth;
+            const btnHeight = btnNao.offsetHeight;
+            
+            // Calcula uma posição aleatória dentro do container
+            // Math.random() gera um número entre 0 e 1
+            // Multiplicamos pelo tamanho disponível e subtraímos o tamanho do botão
+            const maxX = containerWidth - btnWidth - 20; // 20px de margem
+            const maxY = containerHeight - btnHeight - 20;
+            
+            // Gera posições aleatórias
+            const novoX = Math.random() * maxX;
+            const novoY = Math.random() * maxY;
+            
+            // Move o botão para a nova posição
+            btnNao.style.left = novoX + 'px';
+            btnNao.style.top = novoY + 'px';
+            btnNao.style.right = 'auto'; // Remove a posição direita inicial
+        });
+    </script>
+</body>
+</html>
