@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa Eletrônico Digital</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="caixa">
+        <h1>Caixa Eletrônico</h1>
+
+        <div class="saldo">
+            Conta de <span id="nomeConta">...</span> tem saldo atual de: R$ <span id="saldoConta">0,00</span>
+        </div>
+        
+        <hr>
+
+        <form id="formMovimentacao">
+            <h3>Fazer um Depósito ou Saque</h3>
+            <input type="hidden" id="numeroConta" />
+            <input type="number" id="valor" name="valor" placeholder="Digite o valor" step="0.01" required>
+            <button type="button" onclick="fazerDeposito()">Depositar</button>
+            <button type="button" onclick="fazerSaque()">Sacar</button>
+            <a href="listagem.html"><button type="button">Cancelar</button></a>
+        </form>
+    </div>
+
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/movimentacao.js"></script>
+</body>
+</html>

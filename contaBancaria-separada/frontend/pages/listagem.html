@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de contas</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <h2>Contas cadastradas</h2>
+    <a href="cadastrar.html"><button type="button">Cadastrar nova conta</button></a>
+    <a href="../index.html"><button type="button">Voltar</button></a>
+
+    <table id="tabelaContas">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Data Nasc.</th>
+                <th>Saldo</th>
+                <th>Limite</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="corpoTabela">
+            <!-- As linhas serão inseridas via JavaScript -->
+        </tbody>
+    </table>
+
+    <p id="mensagemVazia" style="display: none;">Nenhuma conta cadastrada.</p>
+
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/listagem.js"></script>
+</body>
+</html>

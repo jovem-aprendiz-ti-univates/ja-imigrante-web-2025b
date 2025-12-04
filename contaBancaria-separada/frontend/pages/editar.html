@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de contas</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="caixa">
+        <form id="formEditar">
+            <h2>Editar Conta</h2>
+
+            <input type="hidden" id="numeroConta" />
+
+            <label>Digite seu nome</label>
+            <input type="text" id="nome" name="nome" required />
+
+            <label>Digite seu CPF</label>
+            <input type="text" id="cpf" name="cpf" maxlength="11" placeholder="Digite apenas números" required />
+
+            <label>Data de Nascimento</label>
+            <input type="date" id="data" name="data" required />
+
+            <button type="submit">Atualizar</button>
+            <a href="listagem.html"><button type="button">Cancelar</button></a>
+        </form>
+    </div>
+
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/editar.js"></script>
+</body>
+</html>
